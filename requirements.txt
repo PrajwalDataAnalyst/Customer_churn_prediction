@@ -1,0 +1,17 @@
+flask
+pandas
+numpy
+tensorflow
+scikit-learn
+flask
+pandas
+numpy
+tensorflow
+scikit-learn
+gunicorn
+flask
+pandas
+numpy
+tensorflow
+scikit-learn
+gunicorn
