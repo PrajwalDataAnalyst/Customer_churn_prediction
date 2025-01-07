@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Churn Prediction</title>
+</head>
+<body>
+    <h2>Customer Churn Prediction</h2>
+    <form action="/predict" method="POST">
+        {% for col in [
+            'gender', 'SeniorCitizen', 'Partner', 'Dependents', 'tenure',
+            'PhoneService', 'MultipleLines', 'OnlineSecurity', 'OnlineBackup',
+            'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies',
+            'PaperlessBilling', 'MonthlyCharges', 'TotalCharges',
+            'InternetService_DSL', 'InternetService_Fiber optic',
+            'InternetService_No', 'Contract_Month-to-month', 'Contract_One year',
+            'Contract_Two year', 'PaymentMethod_Bank transfer (automatic)',
+            'PaymentMethod_Credit card (automatic)',
+            'PaymentMethod_Electronic check', 'PaymentMethod_Mailed check'
+        ] %}
+        <label>{{ col }}:</label>
+        <input type="text" name="{{ col }}" required><br><br>
+        {% endfor %}
+        <button type="submit">Predict</button>
+    </form>
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
